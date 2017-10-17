@@ -198,7 +198,8 @@ if __name__ == "__main__":
         for spec in SpecList:
             stat = open("Sequences/{0}/Filtered/{0}_GlobalStat.txt".format(spec), "r")
             output.write(stat.read() + "\n")
-    os.mkdir("Output/Sequence_filtered")
+    if os.path.isdir("Output/Sequence_filtered") is False:
+        os.mkdir("Output/Sequence_filtered")
     for spec in SpecList:
         os.system("cp Sequences/{0}/Filtered/{0}_KeepOver_500pb_and_5x.fasta Output/Sequence_filtered/{0}_filtered.fasta".format(spec))
 

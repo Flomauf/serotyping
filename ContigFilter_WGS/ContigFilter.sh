@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d "Output" ]; then
+mkdir Output
+fi
+
 echo 'Running FileConverter.py'
 python bin/FileConverter.py
 

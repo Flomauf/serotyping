@@ -20,6 +20,9 @@ class Blast:
         '''List of fasta sequences in Query folder'''
         self.list_fasta = os.listdir("Query")
 
+        if os.path.isdir("Data/output_blast") is False:
+            os.system("mkdir Data/output_blast")
+
     def makeLocalDB(self):
 
         '''Create DB from cpsB sequences from Jin et al. Has to be done only once.'''

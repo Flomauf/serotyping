@@ -28,6 +28,11 @@ class Blast:
         for file in self.filesList:
             os.system("makeblastdb -in Query/{0} -out Data/temp/{0} -dbtype nucl > /dev/null".format(file))
 
+        if os.path.isdir("Data/temp") is False:
+            os.system("mkdir Data/temp")
+        if os.path.isdir("Data/output_blast") is False:
+            os.system("mkdir Data/output_blast")
+
     def local_blast(self):
 
         '''
