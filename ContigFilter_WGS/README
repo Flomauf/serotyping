@@ -1,0 +1,13 @@
+This script allows filtrating contigs in fasta files resulting from a SPAdes assembly. Filtration is performed accorging to contigs length and coverage. These parameters can be defined in the script. Default values are 500bp for length and 5x for coverage. Quast analysis will be performed on the filtered fasta files. 
+
+Simply run ContigFilter.sh to execute the scripts.
+
+Prior to running the script:
+- write all specimen name in the SpecList file
+- put all assembled fasta files in the "Sequences" directory. Files names have to match with names in SpecList.
+	For example: for specimen LSPQ4271, write LSPQ4271 in SpecList and put the file LSPQ4271.fasta in "Sequences" directory.
+- path to quast.py has to be specified in the bin/Quast.py file.
+
+Filtered fasta files and the statistics summary files will be generated in the "Output" directory.
+
+PreFilter.py is a little script allowing to filter contigs according to length and coverage without any statistics. Used to remove contigs with very high coverage for MA080904.
