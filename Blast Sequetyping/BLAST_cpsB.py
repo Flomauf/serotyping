@@ -23,10 +23,6 @@ class Blast:
         if os.path.isdir("Data/output_blast") is False:
             os.system("mkdir Data/output_blast")
 
-    def makeLocalDB(self):
-
-        '''Create DB from cpsB sequences from Jin et al. Has to be done only once.'''
-        os.system("makeblastdb -in Data/cps_list_JIN.txt -out Data/database/cps_JIN -dbtype nucl")
                   
     def localBlast(self):
         
@@ -133,7 +129,7 @@ Script execution
 '''      
 option = 0
 while option != (1 or 2 or 3 or 4 or 5):
-    option = input("\nOptions\n1 - Local Blast\n2 - Online Blast\n3 - Local and Online Blast\n4 - Clean Output_blast\n5 - Create local database\n6 - Exit\n\n")
+    option = input("\nOptions\n1 - Local Blast\n2 - Online Blast\n3 - Local and Online Blast\n4 - Clean Output_blast\n5 - Exit\n\n")
     if option == 1:
         os.system("rm -rf Data/Temp/*")
         script = Blast()
@@ -154,9 +150,6 @@ while option != (1 or 2 or 3 or 4 or 5):
     elif option == 4:
         os.system("rm -rf Data/Output_blast/*")
     elif option == 5:
-        script = Blast()
-        script.makeLocalDB()
-    elif option == 6:
         break
     else:
         print ("Invalid")    
