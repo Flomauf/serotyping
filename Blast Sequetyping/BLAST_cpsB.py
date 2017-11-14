@@ -144,7 +144,7 @@ while option != (1 or 2 or 3 or 4 or 5):
         os.system("rm -rf Data/Temp/*")
         script = Blast()
         script.localBlast()
-        script.parsing_local()
+        script.localParsing()
         script.onlineBlast()
         script.onlineParsing()
     elif option == 4:
