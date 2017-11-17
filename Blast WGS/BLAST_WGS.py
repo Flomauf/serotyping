@@ -2,7 +2,6 @@ __autor__ = "florianMauffrey"
 
 
 import os
-import sys
 import re
 from Bio import SeqIO
 from Bio.Blast import NCBIWWW
